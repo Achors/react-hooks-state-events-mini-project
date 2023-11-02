@@ -1,11 +1,35 @@
-import React from "react";
+// import React, {useState} from "react";
+import Task from "./Task";
 
-function TaskList() {
+function TaskList(tasks) {
+  // const [task, setTask] = useState([]);
+  
+
+
+
+
   return (
-    <div className="tasks">
-      {/* display a list of tasks using Task component */}
-    </div>
-  );
-}
+    <tbody>
+    <tr>
+      <th>Category</th>
+      <th>Text</th>
+    </tr>
+    
+    {tasks.map(task => {
+      return (
+        <div className="tasks">
+      <Task 
+      category={task.category}
+      text={task.text}
+      key={task.id}
+
+       />
+        </div>
+        )
+
+    })}
+    </tbody>
+    )    
+};
 
 export default TaskList;
